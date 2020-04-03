@@ -1,12 +1,20 @@
-# PyPoker
+# PyBriscola
 
-Set up redis and set the enviroment variable REDIS_URL accordingly. Then run the app locally with the following commands. See the [flask sockets docs](https://github.com/heroku-python/flask-sockets) for more info.
+## How To Install
+1. Set up a virtual environment with the python version listed in runtime.txt. Use this [tutorial](https://docs.python-guide.org/dev/virtualenvs/) if you need help. Use the "lower level".
+2. With the virtual environment activated, run the following to install the dependencies `pip install -r requirements.txt`
+3. Install [Redis](https://redis.io/topics/quickstart)
+
+## How to Run Locally
+1. Ensure the Redis server is running and set the enviroment variable REDIS_URL accordingly. 
+2. Run the app locally with the following commands. See the [flask sockets docs](https://github.com/heroku-python/flask-sockets) for more info.
 ```bash
 python texasholdem_poker_service.py &
 python traditional_poker_service.py &
 gunicorn -k flask.worker client_web:app
 ```
 
+## PyPoker Docs
 Poker game application built for fun.
 
 It supports different poker games (currently texas holdem and traditional 5 card draw).
