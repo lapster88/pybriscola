@@ -1,6 +1,11 @@
 # PyPoker
 
-Run the app locally with `gunicorn -k flask_sockets.worker client_web:app`. See the [flask sockets docs](https://github.com/heroku-python/flask-sockets) for more info.
+Set up redis and set the enviroment variable REDIS_URL accordingly. Then run the app locally with the following commands. See the [flask sockets docs](https://github.com/heroku-python/flask-sockets) for more info.
+```bash
+python texasholdem_poker_service.py &
+python traditional_poker_service.py &
+gunicorn -k flask.worker client_web:app
+```
 
 Poker game application built for fun.
 
