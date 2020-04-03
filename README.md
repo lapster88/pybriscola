@@ -1,6 +1,6 @@
 # PyPoker
 
-Run the app locally with `gunicorn -k flask_sockets.worker client_web:app`
+Run the app locally with `gunicorn -k flask_sockets.worker client_web:app`. See the [flask sockets docs](https://github.com/heroku-python/flask-sockets) for more info.
 
 Poker game application built for fun.
 
