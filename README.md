@@ -1,5 +1,7 @@
 # PyPoker
 
+Run the app locally with `gunicorn -k flask_sockets.worker client_web:app`
+
 Poker game application built for fun.
 
 It supports different poker games (currently texas holdem and traditional 5 card draw).
