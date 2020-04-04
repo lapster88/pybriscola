@@ -183,7 +183,6 @@ class GamePlayers:
             player_id = self._player_ids[next_item]
             if player_id not in self._folder_ids:
                 yield self._players[player_id]
-        raise StopIteration
 
     # def rounder(self, start_player_id):
     #     def decorator(action):

@@ -29,7 +29,6 @@ class GameServerTest(unittest.TestCase):
                     name="Player {}".format(i),
                     money=1000.0
                 )
-            raise StopIteration
 
     def test_500_players_connection(self):
         time_start = time.time()
