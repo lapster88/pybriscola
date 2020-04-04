@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from poker import GameServerRedis, GameRoomFactory, HoldemPokerGameFactory
 from poker.game_persistence import MongoGameSubscriber
 import pymongo

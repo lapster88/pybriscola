@@ -1,7 +1,9 @@
+from __future__ import absolute_import
 import unittest
 import mock
 from poker import Player, GameServer
 import time
+from six.moves import range
 
 
 class GameServerTest(unittest.TestCase):

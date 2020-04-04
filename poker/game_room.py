@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from . import GameSubscriber, GameError
 import threading
 import gevent
@@ -49,7 +50,7 @@ class GameRoomPlayers:
     def add_player(self, player):
         self._lock.acquire()
         try:
-            if self._players.has_key(player.id):
+            if player.id in self._players:
                 raise DuplicateRoomPlayerException
 
             try:

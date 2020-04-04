@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from . import Channel, ChannelError, MessageFormatError, MessageTimeout
 import json
 import signal
@@ -17,10 +18,12 @@ class ChannelWebSocket(Channel):
 
         # Encode the message
         msg_serialized = json.dumps(message)
-        msg_encoded = msg_serialized.encode("utf-8")
+
+        # Unnecessary in Python 3
+        # msg_encoded = msg_serialized.encode("utf-8")
 
         try:
-            self._ws.send(msg_encoded)
+            self._ws.send(msg_serialized)
         except:
             raise ChannelError("Unable to send data to the remote host")
 

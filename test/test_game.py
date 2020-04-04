@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import unittest
 from poker import Player, HoldemPokerScoreDetector, Card
 from poker.poker_game import *

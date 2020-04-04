@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from . import Channel, MessageFormatError, MessageTimeout, ChannelError
 from redis import exceptions
 import gevent
@@ -42,8 +43,10 @@ class RedisPublisher():
     def send_message(self, message):
         # Encode the message
         msg_serialized = json.dumps(message)
-        msg_encoded = msg_serialized.encode("utf-8")
-        self._redis.publish(self._channel, msg_encoded)
+
+        # Unnecessary in Python 3
+        # msg_encoded = msg_serialized.encode("utf-8")
+        self._redis.publish(self._channel, msg_serialized)
 
 
 class RedisPubSub(Channel):
@@ -73,9 +76,11 @@ class MessageQueue:
 
     def push(self, message):
         msg_serialized = json.dumps(message)
-        msg_encoded = msg_serialized.encode("utf-8")
+
+        # Unecessary in Python 3
+        # msg_encoded = msg_serialized.encode("utf-8")
         try:
-            self._redis.lpush(self._queue_name, msg_encoded)
+            self._redis.lpush(self._queue_name, msg_serialized)
             self._redis.expire(self._queue_name, self._expire)
         except exceptions.RedisError as e:
             raise ChannelError(e.args[0])

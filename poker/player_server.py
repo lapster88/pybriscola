@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from . import Player, MessageFormatError, ChannelError, MessageTimeout
 import logging
 import time

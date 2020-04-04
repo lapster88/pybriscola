@@ -1,5 +1,7 @@
+from __future__ import absolute_import
 import random
 from . import Card
+from six.moves import range
 
 
 class DeckFactory:

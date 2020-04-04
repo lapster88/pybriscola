@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import ctypes
 import collections
 from math import factorial
@@ -6,7 +7,8 @@ import random
 import time
 from poker import Card
 from multiprocessing import Process, Queue, Manager, Value, Lock
-from Queue import Empty
+from six.moves.queue import Empty
+from six.moves import range
 
 
 class Cards:
